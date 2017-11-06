@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +26,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user_id     = Auth::id();
+        $user_quests = DB::table('users_quests')
+        ->select('users_quests.*','quests.name','quests.description')
+        ->leftJoin('quests', 'users_quests.question_id', '=', 'quests.id')        
+        ->where('users_quests.user_id', '=', $user_id)
+        ->orderBy('id', 'desc')        
+        ->paginate(8);
+
+        return view('home', ['user_quests' => $user_quests]);
+    }
+
+    public function playQuest(int $id)
+    {
+        # code...
     }
 }

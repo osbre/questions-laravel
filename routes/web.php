@@ -17,4 +17,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::group(['middleware' => ['web']], function() {
+    Route::get('/quest/{id}', ['as' => 'quest.id', 'uses' => 'HomeController@playQuest']);
+    
+});
+
+Route::get('/quests', ['as' => 'quests', 'uses' => 'IndexController@listQuests']);
+
 Route::get('/home', 'HomeController@index')->name('home');
