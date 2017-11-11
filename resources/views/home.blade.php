@@ -23,8 +23,8 @@
                                     {{ $quest->description }}
                                 </div>
                                 <div class="col-lg-3">
-                                    <a href='{{ route('quest.id',['id' => 4]) }}' class='btn btn-success btn-lg btn-block '>
-                                        Again start quest!
+                                    <a href='{{ route('quest.name',['name' => $quest->name]) }}' class='btn btn-success btn-lg btn-block '>
+                                        Знову пройти квест
                                     </a>
                                 </div>
                             </div>
@@ -32,7 +32,7 @@
                     @empty
                         <p>
                             <h2 class='text-center'>You don't have passed quests :)</h2>
-                            <p class='lead'><a href='{{ route('quests') }}' class='btn btn-outline-info btn-block'>Find new quests to go</a></p>
+                            <p class='lead'><a href='{{ route('quests') }}' class='btn btn-outline-info btn-block'>Знайти нові квести</a></p>
                         </p>
                     @endforelse
                     {{ $user_quests->links() }}

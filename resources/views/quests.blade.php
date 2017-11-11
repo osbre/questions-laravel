@@ -19,7 +19,7 @@
                                     {{ $quest->description }}
                                 </div>
                                 <div class="col-sm">
-                                    <a href='{{ route('quest.id',['id' => 4]) }}' class='btn btn-info btn-lg'>Start quest!</a>
+                                    <a href='{{ route('quest.name',['name' => 'test']) }}' class='btn btn-info btn-lg'>Start quest!</a>
                                 </div>
                             </div>
                         </li>

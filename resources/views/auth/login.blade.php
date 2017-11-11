@@ -6,43 +6,44 @@
         <div class="col-md-8">
             <div class="card card-block">
                 <div class="card-header">
-                    Login
+                    Увійти
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <label class="form-control-label" for="email">Email address</label>
+                            <label class="form-control-label" for="email">Емейл-адрес</label>
                             <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" type="email" id="email" name="email" value="{{ old('email') }}"
-                                   placeholder="Enter your email" required autofocus>
+                                   placeholder="Введіть свій емейл " required autofocus>
                             @if ($errors->has('email'))
                                 <small class="form-control-feedback invalid-feedback">{{ $errors->first('email') }}</small>
                             @endif
                         </div>
 
                         <div class="form-group">
-                            <label class="form-control-label" for="password">Password</label>
+                            <label class="form-control-label" for="password">Пароль</label>
                             <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" id="password" name="password" required aria-describedby="passwordHelp" >
                             @if ($errors->has('password'))
                                 <div class="form-control-feedback invalid-feedback">{{ $errors->first('password') }}</div>
                             @endif
-                            <small class="form-text text-muted" id="passwordHelp">Keep your password from prying eyes.</small>
+                            <small class="form-text text-muted" id="passwordHelp">Тримайте свій пароль від чужих очей.</small>
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-md btn-primary btn-block">Login</button>
+                            <button type="submit" class="btn btn-md btn-primary btn-block">Увійти</button>
 
                         </div>
                         <div class="form-group row">
                             <div class="col">
                                 {{--<label class="form-check-label">--}}
                                 <label>
-                                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> 
+                                    Запам'ятати мене
                                 </label>
                                 {{--</label>--}}
                             </div>
                             <div class="col text-md-right">
-                                <a href="{{ route('password.request') }}">Forgot Your Password?</a>
+                                <a href="{{ route('password.request') }}">Забули свій пароль?</a>
                             </div>
                         </div>
                     </form>

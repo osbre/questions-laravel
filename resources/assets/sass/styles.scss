@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Pacifico);@import url(https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.min.css);
+
 /*=== content === */
 
 .img-block {
@@ -30,16 +30,10 @@ section h2 {
 /* === Flexbox variant === */
 
 a.parent {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     background-color: #11999E;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     min-height: 250px;
     margin: 15px 0;
     color: #fff;
@@ -49,8 +43,7 @@ a.parent {
 a.parent:hover {
     background-color: #2866AB;
     font-weight: 400;
-    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 a:link,
 a:active {
@@ -113,4 +106,3 @@ footer {
 footer p {
     padding: 15px 0 5px;
 }
-

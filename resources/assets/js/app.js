@@ -5,7 +5,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+//require('./bootstrap');
 
 window.Vue = require('vue');
 
@@ -16,7 +16,28 @@ window.Vue = require('vue');
  */
 
 Vue.component('example', require('./components/Example.vue'));
+Vue.component('answer', require('./components/Answer.vue'));
 
 const app = new Vue({
-    el: '#app'
-});
+    el: '#app',
+    methods: {
+        wrong_question: function (title) {
+            swal({
+                title: title,
+                text: "",
+                icon: "error",
+                button: "Спробуйте ще →",
+            });   
+        },
+        correct_question: function (text,href) {
+            swal({
+                title: "Правильно!",
+                text: text,
+                icon: "success",
+                button: "Наступне запитання →",
+            }).then(function () {
+                window.location.href = href;                                
+            })  
+        }
+    }
+});                

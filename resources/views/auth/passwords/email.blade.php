@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card card-block">
                 <div class="card-header">
-                    Reset Password
+                    Скинути пароль
                 </div>
                 <div class="card-body">
                     @if (session('status'))
@@ -17,15 +17,15 @@
                     <form method="POST" action="{{ route('password.email') }}">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <label class="form-control-label" for="email">Email address</label>
+                            <label class="form-control-label" for="email">Емейл-адреса</label>
                             <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" type="email" id="email" name="email" value="{{ old('email') }}"
-                                   placeholder="Enter your email" required autofocus>
+                                   placeholder="Введіть свій емейл " required autofocus>
                             @if ($errors->has('email'))
                                 <small class="form-control-feedback invalid-feedback">{{ $errors->first('email') }}</small>
                             @endif
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-md btn-primary btn-block">Send Password Reset Link</button>
+                            <button type="submit" class="btn btn-md btn-primary btn-block">Надіслати посилання для відновлення паролю</button>
 
                         </div>
                     </form>
