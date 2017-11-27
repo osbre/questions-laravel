@@ -15,7 +15,7 @@ DB_USERNAME=homestead
 DB_PASSWORD=secret
 ```
 
-2. Launch migration larval:
+2. Launch migration laravel:
 ```
 php artisan migrate
 ```
