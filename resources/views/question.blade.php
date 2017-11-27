@@ -20,7 +20,14 @@
                         <div class="row">
                             @foreach($answers_data as $answer)
                                 @if($answer->id == $correct_answer)
-                                    <answer @click.native="correct_question('','#')" text='{{ $answer->text }}'></answer>
+                                    @if($isEndQuestion)
+                                        <answer @click.native="final(
+                                                        '{{ $final_text }}',
+                                                        '{{$next_questions_url}}'
+                                                              )" text='{{ $answer->text }}'></answer>
+                                    @else
+                                        <answer @click.native="correct_question('','{{$next_questions_url}}')" text='{{ $answer->text }}'></answer>
+                                    @endif
                                 @else
                                     <answer @click.native="wrong_question('{{ $data->title}}')" text='{{ $answer->text }}'></answer>
                                 @endif

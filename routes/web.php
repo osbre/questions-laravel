@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::group(['middleware' => ['web']], function() {
     Route::get('/quest/{name}', ['as' => 'quest.name', 'uses' => 'QuestController@playQuest']);
-    Route::get('/question/{question_id}', ['as' => 'question.id', 'uses' => 'QuestController@showQuestion']);    
+    Route::get('/question/{questname}/{id}', ['as' => 'question.questname.id', 'uses' => 'QuestController@showQuestion']);    
 });
 
 Route::get('/quests', ['as' => 'quests', 'uses' => 'IndexController@listQuests']);

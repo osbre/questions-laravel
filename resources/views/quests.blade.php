@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 offset-2">
             <div class="card card-default">
-                <div class="card-header">Quests list!</div>
+                <div class="card-header">Список квестів</div>
 
                 <div class="card-body">
                     <ul class="list-group">
@@ -19,13 +19,15 @@
                                     {{ $quest->description }}
                                 </div>
                                 <div class="col-sm">
-                                    <a href='{{ route('quest.name',['name' => 'test']) }}' class='btn btn-info btn-lg'>Start quest!</a>
+                                    <a href='{{ route('quest.name',['name' => $quest->name]) }}' class='btn btn-info btn-lg'>Start quest!</a>
                                 </div>
                             </div>
                         </li>
                     @endforeach
                     </ul>
-                    {!! $quests->links() !!}
+                    <div style='font-size:40px;'>
+                        {!! $quests->links() !!}
+                    </div>
                 </div>
             </div>
         </div>

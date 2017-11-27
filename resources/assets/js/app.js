@@ -38,6 +38,16 @@ const app = new Vue({
             }).then(function () {
                 window.location.href = href;                                
             })  
+        },
+        final: function (text,href){
+            swal({
+                title: "Вітаємо!",
+                text: text,
+                icon: "success",
+                button: "У профіль →",
+            }).then(function () {
+                window.location.href = href;                                
+            })  
         }
     }
 });                

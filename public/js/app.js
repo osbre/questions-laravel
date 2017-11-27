@@ -251,6 +251,16 @@ var app = new Vue({
             }).then(function () {
                 window.location.href = href;
             });
+        },
+        final: function final(text, href) {
+            swal({
+                title: "Вітаємо!",
+                text: text,
+                icon: "success",
+                button: "У профіль →"
+            }).then(function () {
+                window.location.href = href;
+            });
         }
     }
 });

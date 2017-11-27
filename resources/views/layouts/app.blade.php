@@ -32,7 +32,7 @@
                     <a class="nav-link" href="{{ route('home') }}">Профіль <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class='nav-link' href="{{ route('quests') }}">Квести</a>
+                    <a class='nav-link' href="{{ route('quests') }}">Знайти квести</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav ml-auto">
@@ -48,15 +48,18 @@
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes">
                         {{ Auth::user()->name }}<span class="caret"></span>
                     </a>
+
                     <div class="dropdown-menu" aria-labelledby="themes">
-                        <!--<a class="dropdown-item" href="../default/">Default</a>
-                        <div class="dropdown-divider"></div>-->
+                        <!--<a class="dropdown-item" href="../default/">Default</a>-->
+                        <a class="dropdown-item"  href="{{ route('home') }}">
+                            Мої квести
+                        </a>
+                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-                                Logout
+                                Вийти
                         </a>
-
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>
@@ -70,8 +73,8 @@
         @yield('content')
     </div>
 
-    <!-- Scripts --><script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+    <!-- Scripts -->
+    <script src="{{ asset('js/sweetalert.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>

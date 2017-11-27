@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-12 mx-md-auto">
             <div class="card">
-                <div class="card-header">You quests</div>
+                <div class="card-header">Ваші квести</div>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success">
@@ -35,7 +35,9 @@
                             <p class='lead'><a href='{{ route('quests') }}' class='btn btn-outline-info btn-block'>Знайти нові квести</a></p>
                         </p>
                     @endforelse
-                    {{ $user_quests->links() }}
+                    <div style='font-size:40px;'>
+                        {!! $user_quests->links() !!}
+                    </div>
                 </div>
             </div>
         </div>
