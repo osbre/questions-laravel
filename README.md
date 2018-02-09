@@ -6,7 +6,7 @@ The quiz is a project built on the laravel. This is a game with questions in whi
 
 Clone the repository-
 ```
-git clone https://github.com/Ostap34JS/todo-laravel.git
+git clone https://github.com/Ostap34JS/Quizzes-laravel-php.git
 ```
 
 Then cd into the folder with this command-
@@ -26,7 +26,7 @@ cp .env.example .env
 
 Then edit `.env` file with appropriate credential for your database server. Just edit these two parameter(`DB_USERNAME`, `DB_PASSWORD`).
 
-Then create a database named `todos` and then do a database migration using this command-
+Then create a database named `quests` and then do a database migration using this command-
 ```
 php artisan migrate
 ```
