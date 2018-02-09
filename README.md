@@ -2,21 +2,53 @@
 
 The quiz is a project built on the laravel. This is a game with questions in which you need to choose the right answer. There is also an admin panel for moderation. To participate in this quest, the user must register or log in.
 
-## installation ##
-1.Configure the .env configuration file, namely, connecting to the database
+# Installation
 
-Example:
+Clone the repository-
 ```
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=homestead
-DB_USERNAME=homestead
-DB_PASSWORD=secret
+git clone https://github.com/Ostap34JS/todo-laravel.git
 ```
 
-2. Launch migration laravel:
+Then cd into the folder with this command-
+```
+cd todo-laravel
+```
+
+Then do a composer install
+```
+composer install
+```
+
+Then create a environment file using this command-
+```
+cp .env.example .env
+```
+
+Then edit `.env` file with appropriate credential for your database server. Just edit these two parameter(`DB_USERNAME`, `DB_PASSWORD`).
+
+Then create a database named `todos` and then do a database migration using this command-
 ```
 php artisan migrate
 ```
-3.Good use! :)
+
+Then change permission of storage folder using thins command-
+```
+(sudo) chmod 777 -R storage
+```
+
+At last generate application key, which will be used for password hashing, session and cookie encryption etc.
+```
+php artisan key:generate
+```
+
+## Run server
+
+Run server using this command-
+```
+php artisan serve
+```
+
+Then go to `http://localhost:8000` from your browser and see the app.
+
+
+Good use! :)
