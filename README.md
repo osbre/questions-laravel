@@ -2,7 +2,7 @@
 
 The quiz is a project built on the laravel. This is a game with questions in which you need to choose the right answer. There is also an admin panel for moderation. To participate in this quest, the user must register or log in.
 
-# Installation
+## Installation
 
 Clone the repository-
 ```
@@ -52,3 +52,9 @@ Then go to `http://localhost:8000` from your browser and see the app.
 
 
 Good use! :)
+
+
+# TODO
+ screenshots
+ 
+ heroku deploy
